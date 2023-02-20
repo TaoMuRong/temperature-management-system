@@ -1,0 +1,25 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "license": "ISC",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "dev": "tsc -w",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "dayjs": "^1.11.3",
+    "dotenv": "^16.0.1",
+    "joi": "^17.6.0",
+    "koa": "^2.13.4",
+    "koa-body": "^5.0.0",
+    "koa-router": "^11.0.1",
+    "mongodb": "^4.7.0"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.13.4",
+    "@types/koa-router": "^7.4.4"
+  }
+}
