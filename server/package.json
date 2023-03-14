@@ -5,7 +5,7 @@
   "main": "index.js",
   "license": "ISC",
   "scripts": {
-    "start": "ts-node src/index.ts",
+    "start": "node dist/index.js",
     "dev": "tsc -w",
     "build": "tsc"
   },
