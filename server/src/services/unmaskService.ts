@@ -10,7 +10,7 @@ import * as fs from 'fs'
  */
 export async function add(unmask: IUnmask) {
   const filename = await db.unmask.findOne({ filename: unmask.filename })
-  if (filename && (unmask.createdAt - filename.createdAt) / 1000 < 5)
+  if (filename && (unmask.createdAt - filename.createdAt) / 1000 < 3)
     throw stats.ErrTimeSpace
   const createdAt = await db.unmask.findOne({ createdAt: unmask.createdAt })
   if (createdAt) throw stats.ErrTimeSame
@@ -79,7 +79,8 @@ export async function list(
     .toArray()
   const total = await db.unmask.countDocuments(searchStr)
   result.forEach((value) => {
-    let fileDir = `E:/DeepLearning/ComputerVision/yolov7/yolov7-main/utils/nomask_people/${value.filename}`
+    // let fileDir = `E:/DeepLearning/ComputerVision/yolov7/yolov7-main/utils/nomask_people/${value.filename}`
+    let fileDir = `/data/management/nomask_people/${value.filename}`
     let exists = fs.existsSync(fileDir)
     let fileData = ''
     if (exists) {

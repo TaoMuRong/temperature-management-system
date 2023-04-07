@@ -26,7 +26,8 @@ export async function add(abnormal: IAbnormal) {
 export async function list() {
   const result = await db.abnormal.find().sort({ createdAt: -1 }).toArray()
   result.forEach((value) => {
-    let fileDir = `E:/DeepLearning/ComputerVision/yolov7/yolov7-main/utils/nomask_people/${value.filename}`
+    // let fileDir = `E:/DeepLearning/ComputerVision/yolov7/yolov7-main/utils/nomask_people/${value.filename}`
+    let fileDir = `/data/management/nomask_people/${value.filename}`
     let exists = fs.existsSync(fileDir)
     let fileData = ''
     if (exists) {

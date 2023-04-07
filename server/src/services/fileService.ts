@@ -9,13 +9,15 @@ const videoPathList = [
 ]
 
 export async function getImg(filename: string) {
-  const basePath = `E:/DeepLearning/ComputerVision/yolov7/yolov7-main/utils/nomask_people/${filename}`
+  // const basePath = `E:/DeepLearning/ComputerVision/yolov7/yolov7-main/utils/nomask_people/${filename}`
+  const basePath = `/data/management/nomask_people/${filename}`
   const data = await fs.promises.readFile(basePath)
   return data
 }
 
 export async function listVideo() {
-  const basePath = `E:/DeepLearning/ComputerVision/yolov7/yolov7-main/runs/detect`
+  // const basePath = `E:/DeepLearning/ComputerVision/yolov7/yolov7-main/runs/detect`
+  const basePath = `/data/management/detect`
   const dirArr = await fs.promises.readdir(basePath)
   const videoArr = []
   const tempVideo = { createdAt: '', size: 0 }
