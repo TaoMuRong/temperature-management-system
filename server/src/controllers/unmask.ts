@@ -21,8 +21,8 @@ router.post('/add', async (ctx) => {
       createdAt: Joi.number().required(),
     })
   )
-  const _id = await unmaskService.add(value)
-  ctx.body = new JsonResp({ _id })
+  const text = await unmaskService.add(value)
+  ctx.body = new JsonResp(text)
 })
 
 // 未带口罩人数总结

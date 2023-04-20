@@ -20,8 +20,8 @@ router.post('/add', async (ctx) => {
       createdAt: Joi.number().required(),
     })
   )
-  const _id = await abnormalService.add(value)
-  ctx.body = new JsonResp({ _id })
+  const text = await abnormalService.add(value)
+  ctx.body = new JsonResp(text)
 })
 
 // 删除体温异常人员
